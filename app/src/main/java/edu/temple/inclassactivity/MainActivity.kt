@@ -22,6 +22,13 @@ class MainActivity : AppCompatActivity() {
         typedArray.recycle()
 
         // Display images specified in imageArray in Spinner and RecyclerView
+        if (spinner!=null){
+            spinner.adapter = CustomSpinnerAdapter(this, imageArray)
+        }
+        if (recyclerView!=null){
+            recyclerView.adapter = CustomRecyclerAdapter(imageArray)
+            recyclerView.layoutManager = GridLayoutManager(this, 3)
+        }
 
     }
 }
